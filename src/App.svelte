@@ -1,9 +1,21 @@
 <script>
-	export let name;
+	let name = "prova";
+	let points = 100;
+
+	const addPoint = () => points += 1;
+	const removePoint = () => points -= 1;
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
+	<h2>{points}</h2>
+	<button on:click={addPoint}>
+		+1
+	</button>
+	<button on:click={removePoint}>
+		-1
+	</button>
+	<input type="number" bind:value={points} />
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 
