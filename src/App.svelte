@@ -22,6 +22,11 @@
     const newPlayer = e.detail;
     players = [...players, newPlayer];
   };
+
+  const removePlayer = (e) => {
+    const index = e.detail;
+    players = players.filter((x, i) => i !== index);
+  };
 </script>
 
 <Navbar />
@@ -30,8 +35,8 @@
   {#if players.length === 0}
     <p>No players</p>
   {:else}
-    {#each players as { name, points }}
-      <Player {name} {points} />
+    {#each players as { name, points }, index}
+      <Player {name} {points} {index} on:removeplayer={removePlayer} />
     {/each}
   {/if}
   <p>
