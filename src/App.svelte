@@ -39,10 +39,8 @@
       <Player {name} {points} {index} on:removeplayer={removePlayer} />
     {/each}
   {/if}
-  <p>
-    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-    how to build Svelte apps.
-  </p>
+  <!-- https://svelte.dev/tutorial/basics -->
+  <!-- https://www.youtube.com/watch?v=zojEMeQGGHs&list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO&index=1 -->
 </main>
 
 <style>
