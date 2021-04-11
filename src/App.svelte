@@ -4,18 +4,21 @@
   import AddPlayer from "./AddPlayer.svelte";
 
   let players = [
-    {
-      name: "asd",
-      points: 12,
-    },
-    {
-      name: "asdasd",
-      points: 22,
-    },
-    {
-      name: "asdasdasd",
-      points: 32,
-    },
+    // {
+    //   name: "asd",
+    //   points: 12,
+    //   id: 1,
+    // },
+    // {
+    //   name: "asdasd",
+    //   points: 22,
+    //   id: 2,
+    // },
+    // {
+    //   name: "asdasdasd",
+    //   points: 32,
+    //   id: 3,
+    // },
   ];
 
   const addPlayer = (e) => {
@@ -32,13 +35,21 @@
 <Navbar />
 <main>
   <AddPlayer on:addplayer={addPlayer} />
-  {#if players.length === 0}
+  <!-- metodo classico con if -->
+  <!-- {#if players.length === 0}
     <p>No players</p>
   {:else}
-    {#each players as { name, points }, index}
+    {#each players as { name, points, id }, index (id)}
       <Player {name} {points} {index} on:removeplayer={removePlayer} />
     {/each}
-  {/if}
+  {/if} -->
+
+  <!-- metodo WOW -->
+  {#each players as { name, points, id }, index (id)}
+    <Player {name} {points} {index} on:removeplayer={removePlayer} />
+  {:else}
+    <p>No players</p>
+  {/each}
   <!-- https://svelte.dev/tutorial/basics -->
   <!-- https://www.youtube.com/watch?v=zojEMeQGGHs&list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO&index=1 -->
 </main>
