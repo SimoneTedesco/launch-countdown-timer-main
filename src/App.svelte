@@ -34,7 +34,9 @@
 
 <Navbar />
 <main>
-  <AddPlayer on:addplayer={addPlayer} />
+  {#if players.length !== 5}
+    <AddPlayer on:addplayer={addPlayer} />
+  {/if}
   <!-- metodo classico con if -->
   <!-- {#if players.length === 0}
     <p>No players</p>
