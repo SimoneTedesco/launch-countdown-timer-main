@@ -2,23 +2,24 @@
   import Navbar from "./Navbar.svelte";
   import Player from "./Player.svelte";
   import AddPlayer from "./AddPlayer.svelte";
+  import Modal from "./Modal.svelte";
 
   let players = [
-    // {
-    //   name: "asd",
-    //   points: 12,
-    //   id: 1,
-    // },
-    // {
-    //   name: "asdasd",
-    //   points: 22,
-    //   id: 2,
-    // },
-    // {
-    //   name: "asdasdasd",
-    //   points: 32,
-    //   id: 3,
-    // },
+    {
+      name: "asd",
+      points: 12,
+      id: 1,
+    },
+    {
+      name: "asdasd",
+      points: 22,
+      id: 2,
+    },
+    {
+      name: "asdasdasd",
+      points: 32,
+      id: 3,
+    },
   ];
 
   const addPlayer = (e) => {
@@ -34,6 +35,7 @@
 
 <Navbar />
 <main>
+  <Modal />
   {#if players.length !== 5}
     <AddPlayer on:addplayer={addPlayer} />
   {/if}
