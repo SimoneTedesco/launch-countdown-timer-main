@@ -1,4 +1,6 @@
 <script>
+  // uso export per variabili che arrivano dall'esterno
+  export let msg = "default msg";
   let showModal = true;
   let isPromo = true;
 </script>
@@ -29,7 +31,7 @@
 <!-- class:promo aggiunge la classe "promo" condizionalmente -->
 <div class="backdrop">
   <div class="modal" class:promo={isPromo}>
-    <p>modal asd </p>
+    <p>{msg || "asdasd"} </p>
   </div>
 </div>
 {/if}

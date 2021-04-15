@@ -35,7 +35,7 @@
 
 <Navbar />
 <main>
-  <Modal />
+  <Modal msg="prova props" />
   {#if players.length !== 5}
     <AddPlayer on:addplayer={addPlayer} />
   {/if}
