@@ -29,7 +29,8 @@
 
 {#if showModal}
 <!-- on:click a vuoto inoltra l'evento al componente parent-->
-<div class="backdrop" on:click>
+<!-- aggiungendo "|self" si aggiunge un modifier dell'evento che in questo caso rende cliccabile solo l'elemento con onclick e non i figli -->
+<div class="backdrop" on:click|self>
   <!-- class:promo aggiunge la classe "promo" condizionalmente -->
   <div class="modal" class:promo={isPromo}>
     <p>{msg || "asdasd"} </p>

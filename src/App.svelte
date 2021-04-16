@@ -39,7 +39,8 @@
 
 <Navbar />
 <main>
-  <button on:click={toggleModal}>open modal</button>
+  <!-- |once è un event modifier che rende apribile la modale solo una volta -->
+  <button on:click|once={toggleModal}>open modal</button>
   <!-- onclick è forwardato -->
   <Modal msg="prova props" {showModal} on:click={toggleModal} />
   {#if players.length !== 5}
