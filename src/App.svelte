@@ -3,7 +3,7 @@
   import Player from "./Player.svelte";
   import AddPlayer from "./AddPlayer.svelte";
   import Modal from "./Modal.svelte";
-
+  let showModal = false
   let players = [
     {
       name: "asd",
@@ -31,11 +31,17 @@
     const index = e.detail;
     players = players.filter((x, i) => i !== index);
   };
+
+  const toggleModal = () => {
+    showModal = !showModal
+  }
 </script>
 
 <Navbar />
 <main>
-  <Modal msg="prova props" />
+  <button on:click={toggleModal}>open modal</button>
+  <!-- onclick è forwardato -->
+  <Modal msg="prova props" {showModal} on:click={toggleModal} />
   {#if players.length !== 5}
     <AddPlayer on:addplayer={addPlayer} />
   {/if}

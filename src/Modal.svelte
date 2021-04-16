@@ -1,7 +1,7 @@
 <script>
   // uso export per variabili che arrivano dall'esterno
   export let msg = "default msg";
-  let showModal = true;
+  export let showModal = false;
   let isPromo = true;
 </script>
 
@@ -28,8 +28,9 @@
 </style>
 
 {#if showModal}
-<!-- class:promo aggiunge la classe "promo" condizionalmente -->
-<div class="backdrop">
+<!-- on:click a vuoto inoltra l'evento al componente parent-->
+<div class="backdrop" on:click>
+  <!-- class:promo aggiunge la classe "promo" condizionalmente -->
   <div class="modal" class:promo={isPromo}>
     <p>{msg || "asdasd"} </p>
   </div>
