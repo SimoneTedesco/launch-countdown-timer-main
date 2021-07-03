@@ -42,7 +42,14 @@
   <!-- |once è un event modifier che rende apribile la modale solo una volta -->
   <button on:click|once={toggleModal}>open modal</button>
   <!-- onclick è forwardato -->
-  <Modal msg="prova props" {showModal} on:click={toggleModal} />
+  <Modal {showModal} on:click={toggleModal}>
+    <h3>wowo owow</h3>
+    <form>
+      <input type="text" placeholder="1111">
+      <input type="text" placeholder="2222">
+      <button>add person</button>
+    </form>
+  </Modal>
   {#if players.length !== 5}
     <AddPlayer on:addplayer={addPlayer} />
   {/if}
