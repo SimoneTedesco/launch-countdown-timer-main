@@ -35,6 +35,8 @@
   <div class="modal" class:promo={isPromo}>
     <!-- tag speciale che renderizza i children del componente -->
     <slot></slot>
+    <!-- se uno slot ha un nome non viene renderizzato se non inserendo l'attributo name -->
+    <slot name="title"></slot>
   </div>
 </div>
 {/if}

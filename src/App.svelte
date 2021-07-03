@@ -49,6 +49,9 @@
       <input type="text" placeholder="2222">
       <button>add person</button>
     </form>
+    <div slot="title">
+      <h3>Add a new person</h3>
+    </div>
   </Modal>
   {#if players.length !== 5}
     <AddPlayer on:addplayer={addPlayer} />
