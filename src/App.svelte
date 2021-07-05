@@ -3,6 +3,7 @@
   import Player from "./Player.svelte";
   import AddPlayer from "./AddPlayer.svelte";
   import Modal from "./Modal.svelte";
+  import AddPersonForm from "./AddPersonForm.svelte";
   let showModal = false
   let players = [
     {
@@ -44,11 +45,7 @@
   <!-- onclick è forwardato -->
   <Modal {showModal} on:click={toggleModal}>
     <h3>wowo owow</h3>
-    <form>
-      <input type="text" placeholder="1111">
-      <input type="text" placeholder="2222">
-      <button>add person</button>
-    </form>
+    <AddPersonForm />
     <div slot="title">
       <h3>Add a new person</h3>
     </div>
