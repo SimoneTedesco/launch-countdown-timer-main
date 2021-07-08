@@ -36,6 +36,11 @@
   const toggleModal = () => {
     showModal = !showModal
   }
+
+  const addPerson = (e) => {
+    players = [e.detail, ...players];
+    showModal(false);
+  } 
 </script>
 
 <Navbar />
@@ -45,7 +50,7 @@
   <!-- onclick è forwardato -->
   <Modal {showModal} on:click={toggleModal}>
     <h3>wowo owow</h3>
-    <AddPersonForm />
+    <AddPersonForm on:addPerson={addPerson} />
     <div slot="title">
       <h3>Add a new person</h3>
     </div>
